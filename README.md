@@ -1,2 +1,2 @@
-# micrograd-from-scratch
-Learning ML...
+### micrograd-from-scratch
+Micrograd is a compact, self-contained, and easy-to-understand deep learning library. If you're looking to learn how deep learning works under the hood, this is an excellent starting point. As an Autograd library, Micrograd automatically computes gradients for you. Additionally, it serves as a neural network library, which means it can compute gradients and update your neural network's weights.
