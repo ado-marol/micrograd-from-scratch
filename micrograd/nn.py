@@ -20,7 +20,7 @@ class Neuron(Module):
         self.nonlin = nonlin
 
     def __call__(self, x):
-        activation = sum((wi*xi for wi, xi in zip(self.w, x)) + self.b)
+        activation = sum((wi*xi for wi, xi in zip(self.w, x)), self.b)
         return activation.relu() if self.nonlin else activation
 
     def parameters(self):
@@ -32,7 +32,7 @@ class Neuron(Module):
 class Layer(Module):
 
     def __init__(self, nin, nout, **kwargs):
-        self.neurons = [Neuron(nin, **kwargs)  for _ in nout]
+        self.neurons = [Neuron(nin, **kwargs)  for _ in range(nout)]
 
     def __call__(self, x):
         out = [n(x) for n in self.neurons]
